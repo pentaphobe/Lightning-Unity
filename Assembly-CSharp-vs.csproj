@@ -50,6 +50,8 @@
      <Compile Include="Assets\CarSound.cs" />
      <Compile Include="Assets\MissileControl.cs" />
      <Compile Include="Assets\PlayerControl.cs" />
+     <Compile Include="Assets\PlayerScore.cs" />
+     <Compile Include="Assets\StartCount.cs" />
      <Compile Include="Assets\TheAnyKey.cs" />
      <Compile Include="Assets\ZoomCamera.cs" />
      <Compile Include="Assets\ZoomCameraTarget.cs" />
