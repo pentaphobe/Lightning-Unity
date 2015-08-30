@@ -9,6 +9,7 @@ public class MissileControl : MonoBehaviour {
 	public float lifespan = 400;
 	float age = 0;
 
+	public GameObject explosion;
 	public AudioClip ExplodeSound;
 
 	// Use this for initialization
@@ -16,10 +17,12 @@ public class MissileControl : MonoBehaviour {
 	
 	}
 
-	void Explode() {
-		Destroy (gameObject);
-		GetComponent<AudioSource>().PlayOneShot(ExplodeSound, 1.0f);
+	void Explode() {		
+		Instantiate(explosion, transform.position, transform.rotation);
 
+		Destroy (gameObject);
+
+		GetComponent<AudioSource>().PlayOneShot(ExplodeSound, 1.0f);
 	}
 
 	void Update() {
