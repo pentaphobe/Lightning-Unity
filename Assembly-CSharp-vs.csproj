@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CarSound.cs" />
      <Compile Include="Assets\MissileControl.cs" />
      <Compile Include="Assets\PlayerControl.cs" />
      <Compile Include="Assets\ZoomCamera.cs" />

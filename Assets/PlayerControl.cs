@@ -9,19 +9,31 @@ public class PlayerControl : MonoBehaviour {
 	public string verticalMissileBind = "P1_Vertical_Mis";
 	public float speed = 20;
 	public float turnSpeed = 4;
+	float accel = 0;
+
+	public float firingCooldown = 20;
+	float firingCounter = 0;
 
 	public Transform missilePrefab;
 
 	Rigidbody rb;
+	AudioSource engineSound;
+	Transform bulletSpawnPoint;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		engineSound = GetComponent<AudioSource> ();
+		bulletSpawnPoint = transform.Find ("BulletSpawnPoint");
 	}
 
 	void Update() {
-		if (Input.GetButton (attackBind)) {
-			Transform missile = Instantiate (missilePrefab, transform.position + transform.forward * 2, Quaternion.identity) as Transform;
+		++firingCounter;
+
+		if (Input.GetButton (attackBind) && firingCounter >= firingCooldown) {
+			firingCounter = 0;
+			Transform missile = Instantiate (missilePrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation) as Transform;
+
 			MissileControl mc = missile.GetComponent<MissileControl>();
 			mc.horizontalBind = horizontalMissileBind;
 			mc.verticalBind = verticalMissileBind;
@@ -34,7 +46,15 @@ public class PlayerControl : MonoBehaviour {
 		transform.Rotate (Vector3.up, rot * turnSpeed);
 		float acc = Input.GetAxis (verticalBind);
 
-		rb.AddRelativeForce (Vector3.forward * speed * acc);
+		accel += (acc - accel) * 0.05f;
+		rb.AddRelativeForce (Vector3.forward * speed * accel);
 
+		float intensity = accel;
+		if (intensity < 0) {
+			intensity *= -0.9f;
+		}
+
+		engineSound.volume = 0.2f + (intensity * 0.8f);
+		engineSound.pitch = 1f + (intensity * 0.8f);
 	}
 }
