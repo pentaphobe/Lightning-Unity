@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MissileControl.cs">
+    <Files>
+      <File FileName="Assets/MissileControl.cs" Line="18" Column="34" />
+      <File FileName="../Bulwark/Assets/Experiment Assets/FollowCam.cs" Line="1" Column="1" />
+      <File FileName="../Bulwark/Assets/Experiment Assets/FollowTarget.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
