@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class MissileControl : MonoBehaviour {
-	public string attackBind = "P1_Fire";
-	public string horizontalBind = "P1_Horizontal";
-	public string verticalBind = "P1_Vertical";
-	public float speed = 0.00001f;
+	public string horizontalBind = "P1_Horizontal_Mis";
+	public string verticalBind = "P1_Vertical_Mis";
+	public float speed = 5f;
+	public float turnSpeed = 2;
 
 	// Use this for initialization
 	void Start () {
