@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class CollisionChecker : MonoBehaviour {
+	public LevelResetter gameControl;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class CollisionChecker : MonoBehaviour {
 		if(col.gameObject.name == "Missile")
 		{
 			Destroy(col.gameObject);
+			gameControl.Reset();
 		}
 	}
 }

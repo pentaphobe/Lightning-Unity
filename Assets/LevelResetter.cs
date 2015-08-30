@@ -17,11 +17,10 @@ public class LevelResetter : MonoBehaviour {
 		
 	}
 
-	void Reset() {
+	public void Reset() {
 		player1.transform.position = player1StartPosition.position;
 		player2.transform.position = player2StartPosition.position;
 		player1.transform.rotation = player1StartPosition.rotation;
 		player2.transform.rotation = player2StartPosition.rotation;
-
 	}
 }
