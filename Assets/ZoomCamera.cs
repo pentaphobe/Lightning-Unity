@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ZoomCamera : MonoBehaviour {
-	public float lerpSpeed = 0.2f;
+	public float lerpSpeed = 0.002f;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +11,7 @@ public class ZoomCamera : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		ZoomCameraTarget[] targets = Resources.FindObjectsOfTypeAll (typeof(ZoomCameraTarget)) as ZoomCameraTarget[];
 
 		Vector3 positionAccumulator = new Vector3 ();
@@ -29,7 +29,7 @@ public class ZoomCamera : MonoBehaviour {
 		delta *= lerpSpeed;
 		delta += transform.position;
 
-//		transform.position = delta;
+		transform.position = delta;
 
 	}
 }
