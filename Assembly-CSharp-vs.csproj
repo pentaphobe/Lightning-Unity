@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\AutoRotate.cs" />
      <Compile Include="Assets\CarSound.cs" />
+     <Compile Include="Assets\CollisionChecker.cs" />
+     <Compile Include="Assets\LevelResetter.cs" />
      <Compile Include="Assets\MissileControl.cs" />
      <Compile Include="Assets\PlayerControl.cs" />
      <Compile Include="Assets\PlayerScore.cs" />
