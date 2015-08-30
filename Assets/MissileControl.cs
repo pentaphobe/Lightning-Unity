@@ -35,7 +35,7 @@ public class MissileControl : MonoBehaviour {
 		float rot = Input.GetAxis (horizontalBind);
 		transform.Rotate (Vector3.up, rot);
 
-		transform.Translate (transform.forward * speed * Time.fixedDeltaTime);
+		transform.Translate (Vector3.forward * speed * Time.fixedDeltaTime);
 	}
 
 
